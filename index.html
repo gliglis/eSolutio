@@ -6,7 +6,6 @@
 <title>eSolutio — Software Engineering Studio</title>
 <meta name="description" content="eSolutio, Rafał Kruk — custom software development: Java backend, Python, native Android and iOS apps.">
 
-<!-- Open Graph / social preview -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="eSolutio — Software Engineering Studio">
 <meta property="og:description" content="Custom software development: Java backend, Python, native Android and iOS apps.">
@@ -16,176 +15,118 @@
 <meta name="twitter:title" content="eSolutio — Software Engineering Studio">
 <meta name="twitter:description" content="Custom software development: Java backend, Python, native Android and iOS apps.">
 
-<!-- Favicon (inline SVG, cyan 'e') -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1117'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='700' fill='%2322d3ee' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --ink:#0d1117;
-    --panel:#141b24;
-    --line:#232d3a;
-    --text:#e6edf3;
-    --muted:#8b98a8;
-    --accent:#22d3ee;
-    --accent-dim:#0e7490;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--ink);
-    color:var(--text);
-    font-family:'Inter',system-ui,sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-  .mono{font-family:'JetBrains Mono',monospace}
-  a{color:inherit}
-
-  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.85);backdrop-filter:blur(8px);z-index:10}
-  .bar{display:flex;justify-content:space-between;align-items:center;height:64px}
-  .brand{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;letter-spacing:-.5px}
-  .brand b{color:var(--accent)}
-  nav a{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);text-decoration:none;margin-left:22px;transition:color .2s}
-  nav a:hover{color:var(--accent)}
-  @media(max-width:560px){nav a{margin-left:14px;font-size:12px}}
-
-  .hero{padding:96px 0 72px}
-  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);letter-spacing:.5px;margin-bottom:24px}
-  .eyebrow::before{content:"// ";color:var(--muted)}
-  h1{font-size:clamp(34px,6vw,58px);line-height:1.05;font-weight:600;letter-spacing:-1.5px;margin-bottom:24px}
-  h1 span{color:var(--accent)}
-  .lead{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:620px}
-  .cta-row{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{font-family:'JetBrains Mono',monospace;font-size:14px;text-decoration:none;padding:12px 22px;border-radius:6px;transition:all .2s;cursor:pointer;border:none}
-  .btn-primary{background:var(--accent);color:var(--ink);font-weight:500}
-  .btn-primary:hover{background:#5ce0f2}
-  .btn-ghost{border:1px solid var(--line);color:var(--text)}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-
-  section{padding:64px 0}
-  .sec-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:28px}
-  h2{font-size:clamp(24px,4vw,34px);font-weight:600;letter-spacing:-.8px;margin-bottom:20px}
-  p.body{color:var(--muted);max-width:640px;margin-bottom:14px}
-
-  .manifest{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
-  .manifest-head{display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted)}
-  .dot{width:11px;height:11px;border-radius:50%}
-  .dot.r{background:#ff5f56}.dot.y{background:#ffbd2e}.dot.g{background:#27c93f}
-  .manifest-head span{margin-left:8px}
-  .module{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:start;padding:20px 22px;border-bottom:1px solid var(--line)}
-  .module:last-child{border-bottom:none}
-  .module .key{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:500}
-  .module .key i{color:var(--accent);font-style:normal}
-  .module .desc{grid-column:1/2;color:var(--muted);font-size:14px;margin-top:4px}
-  .tags{grid-column:2/3;grid-row:1/3;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:300px}
-  .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);border:1px solid var(--accent-dim);border-radius:4px;padding:3px 8px;white-space:nowrap}
-  @media(max-width:560px){
-    .module{grid-template-columns:1fr}
-    .tags{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:10px;max-width:none}
-  }
-
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:8px}
-  .cell{background:var(--panel);padding:22px;min-width:0}
-  .cell .k{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-  .cell .v{font-size:16px;overflow-wrap:anywhere}
-  .cell a{color:var(--accent);text-decoration:none}
-  .cell a:hover{text-decoration:underline}
-  .cell .v.email{font-size:14px}
-  @media(max-width:720px){.contact-grid{grid-template-columns:1fr}}
-
-  footer{border-top:1px solid var(--line);padding:32px 0;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted)}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-  @media(prefers-reduced-motion:no-preference){
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
   <div class="wrap bar">
     <div class="brand">e<b>Solutio</b></div>
-    <nav>
-      <a href="#about">about</a>
-      <a href="#stack">stack</a>
-      <a href="#contact">contact</a>
-    </nav>
+    <div class="nav-right">
+      <nav>
+        <a href="#about" data-i18n="nav.about">about</a>
+        <a href="#stack" data-i18n="nav.stack">stack</a>
+        <a href="#contact" data-i18n="nav.contact">contact</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="pl" aria-pressed="false">PL</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
 
   <div class="hero reveal">
-    <div class="eyebrow">software engineering studio</div>
-    <h1>I build software<br>for <span>backend</span> and <span>mobile</span>.</h1>
-    <p class="lead">eSolutio — Rafał Kruk. Design and development of server-side systems and native mobile apps. From architecture to deployment.</p>
+    <div class="eyebrow" data-i18n="hero.eyebrow">software engineering studio</div>
+    <h1 data-i18n-html="hero.h1">I build software<br>for <span class="hl">backend</span> and <span class="ul">mobile</span>.</h1>
+    <p class="lead" data-i18n="hero.lead">eSolutio — Rafał Kruk. Design and development of server-side systems and native mobile apps. From architecture to deployment.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#contact">Get in touch</a>
-      <a class="btn btn-ghost" href="#stack">See the stack</a>
+      <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Get in touch</a>
+      <a class="btn btn-ghost" href="#stack" data-i18n="hero.cta2">See the stack</a>
     </div>
   </div>
 
   <section id="about" class="reveal">
-    <div class="sec-label">01 — about</div>
-    <h2>One engineer, production quality</h2>
-    <p class="body">eSolutio is a software studio run by Rafał Kruk. I develop custom software: full backend systems in Java, services and automation in Python, and native apps for Android and iOS.</p>
-    <p class="body">I work directly with clients — no layers in between. You get an engineer who understands both the system architecture and the details of shipping it.</p>
+    <div class="sec-label" data-i18n="about.label">01 — about</div>
+    <h2 data-i18n="about.h2">One engineer, production quality</h2>
+    <p class="body" data-i18n="about.p1">eSolutio is a software studio run by Rafał Kruk. I develop custom software: full backend systems in Java, services and automation in Python, and native apps for Android and iOS.</p>
+    <p class="body" data-i18n="about.p2">I work directly with clients — no layers in between. You get an engineer who understands both the system architecture and the details of shipping it.</p>
   </section>
 
   <section id="stack" class="reveal">
-    <div class="sec-label">02 — capabilities</div>
-    <h2>Four areas, one workshop</h2>
+    <div class="sec-label" data-i18n="stack.label">02 — capabilities</div>
+    <h2 data-i18n="stack.h2">Four areas, one workshop</h2>
     <div class="manifest">
       <div class="manifest-head">
         <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
         <span>~/esolutio/stack</span>
       </div>
       <div class="module">
-        <div class="key"><i>›</i> Java backend</div>
-        <div class="desc">Full backend stack — APIs, services, integrations, databases and business logic ready for production.</div>
+        <div class="key"><i>›</i> <span data-i18n="stack.java.key">Java backend</span></div>
+        <div class="desc" data-i18n="stack.java.desc">Full backend stack — APIs, services, integrations, databases and business logic ready for production.</div>
         <div class="tags"><span class="tag">Java</span><span class="tag">Spring</span><span class="tag">REST</span><span class="tag">SQL</span></div>
       </div>
       <div class="module">
-        <div class="key"><i>›</i> Python</div>
-        <div class="desc">Services, automation, data processing and tooling that supports systems and workflows.</div>
+        <div class="key"><i>›</i> <span data-i18n="stack.python.key">Python</span></div>
+        <div class="desc" data-i18n="stack.python.desc">Services, automation, data processing and tooling that supports systems and workflows.</div>
         <div class="tags"><span class="tag">Python</span><span class="tag">API</span><span class="tag">Automation</span></div>
       </div>
       <div class="module">
-        <div class="key"><i>›</i> Android</div>
-        <div class="desc">Native Android apps — from concept to store release.</div>
+        <div class="key"><i>›</i> <span data-i18n="stack.android.key">Android</span></div>
+        <div class="desc" data-i18n="stack.android.desc">Native Android apps — from concept to store release.</div>
         <div class="tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Java</span></div>
       </div>
       <div class="module">
-        <div class="key"><i>›</i> iOS</div>
-        <div class="desc">Native apps for iPhone and iPad, tuned for the Apple ecosystem.</div>
+        <div class="key"><i>›</i> <span data-i18n="stack.ios.key">iOS</span></div>
+        <div class="desc" data-i18n="stack.ios.desc">Native apps for iPhone and iPad, tuned for the Apple ecosystem.</div>
         <div class="tags"><span class="tag">iOS</span><span class="tag">Swift</span></div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="reveal">
-    <div class="sec-label">03 — contact</div>
-    <h2>Let's talk about your project</h2>
-    <p class="body">Briefly describe what you want to build — I'll get back to you with a proposed scope and quote.</p>
-    <div class="contact-grid">
-      <div class="cell">
-        <div class="k">Email</div>
-        <div class="v email"><a href="mailto:rivets.bright_84@icloud.com">rivets.bright_84@icloud.com</a></div>
-      </div>
-      <div class="cell">
-        <div class="k">Company</div>
-        <div class="v">eSolutio Rafał Kruk</div>
-      </div>
-      <div class="cell">
-        <div class="k">Tax ID (NIP)</div>
-        <div class="v mono">821-249-14-49</div>
+    <div class="sec-label" data-i18n="contact.label">03 — contact</div>
+    <h2 data-i18n="contact.h2">Let's talk about your project</h2>
+    <p class="body" style="margin-bottom:32px" data-i18n="contact.p">Briefly describe what you want to build — I'll get back to you with a proposed scope and quote.</p>
+
+    <div class="contact-cols">
+      <form id="contactForm">
+        <div class="field">
+          <label for="name" data-i18n="form.name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email" data-i18n="form.email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="message" data-i18n="form.project">Project</label>
+          <textarea id="message" name="message" required data-i18n-placeholder="form.placeholder" placeholder="What do you want to build?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n="form.submit">Send message</button>
+        <div class="form-note" data-i18n="form.note">// opens your mail client</div>
+      </form>
+
+      <div class="info-list">
+        <div class="cell">
+          <div class="k" data-i18n="info.company">Company</div>
+          <div class="v">eSolutio Rafał Kruk</div>
+        </div>
+        <div class="cell">
+          <div class="k" data-i18n="info.nip">Tax ID (NIP)</div>
+          <div class="v mono">821-249-14-49</div>
+        </div>
+        <div class="cell">
+          <div class="k" data-i18n="info.response">Response time</div>
+          <div class="v" data-i18n="info.responseVal">Within 24h on business days</div>
+        </div>
       </div>
     </div>
   </section>
@@ -199,14 +140,9 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target);} });
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-</script>
-
+<script src="js/lang/en.js"></script>
+<script src="js/lang/pl.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
